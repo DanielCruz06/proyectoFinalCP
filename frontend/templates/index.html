@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión de Órdenes</h1>
+        <nav>
+            <ul>
+                <li><a href="#products-section">Productos</a></li>
+                <li><a href="#orders-section">Órdenes</a></li>
+                <li><a href="#auth-section">Autenticación</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="auth-section">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="login-message"></p>
+    </section>
+
+    <section id="products-section">
+        <h2>Productos</h2>
+        <button id="load-products-btn">Cargar Productos</button>
+        <ul id="products-list"></ul>
+        <h3>Agregar Producto</h3>
+        <form id="add-product-form">
+            <input type="text" id="product-name" placeholder="Nombre del Producto">
+            <input type="number" id="product-price" placeholder="Precio">
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </section>
+
+    <section id="orders-section">
+        <h2>Órdenes</h2>
+        <form id="create-order-form">
+            <input type="text" id="user-id" placeholder="ID del Usuario">
+            <input type="text" id="product-ids" placeholder="IDs de Productos (separados por coma)">
+            <button type="submit">Crear Orden</button>
+        </form>
+        <ul id="orders-list"></ul>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
